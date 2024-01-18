@@ -79,7 +79,8 @@ nav .nav-links a.selected {
   width: 100%;
 }
 
-.main .info button {
+.main .info button,
+.content .post-list .post-item .buttons button {
   padding: 10px 30px;
   background: #3498db;
   border: none;
@@ -294,4 +295,40 @@ footer p {
 .content > h2,
 .content > h3 {
   width: 970px;
+}
+
+.content .post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content .post-list .post-item {
+  background-color: #dbedf2;
+  padding: 24px;
+  width: 960px;
+  border-radius: 10px;
+}
+
+.content .post-list .post-item .buttons {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.content .post-list .post-item .buttons button {
+  font-size: 14px;
+  padding: 6px 20px;
+}
+
+.content .post-list .post-item .buttons i {
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.content .post-list .post-item .buttons i:hover {
+  color: #3498db;
 }
