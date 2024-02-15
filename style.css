@@ -7,6 +7,20 @@
   font-family: "Heebo", sans-serif;
 }
 
+:root {
+  --primary-icon-color: #3498db;
+  --second-icon-color: #2980b9;
+
+  --primary-background-color: #fff;
+  --second-background-color: #212121;
+  
+}
+
+.dark-mode {
+  --primary-background-color: #000106;
+  --second-background-color: #fff;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -23,7 +37,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--primary-background-color);
   font-weight: 600;
 }
 
@@ -41,7 +55,7 @@ nav .logo img {
 
 nav .logo a {
   font-size: 15px;
-  color: #3e3e3e;
+  color: var(--second-background-color);
   font-weight: bold;
 }
 
@@ -52,11 +66,12 @@ nav .nav-links {
 
 nav .nav-links a {
   transition: color 0.3s ease;
+  color: var(--second-background-color);
 }
 
 nav .nav-links a:hover,
 nav .nav-links a.selected {
-  color: #3498db;
+  color: var(--primary-icon-color);
 }
 
 .main {
@@ -66,23 +81,30 @@ nav .nav-links a.selected {
   justify-content: space-between;
   gap: 50px;
   height: calc(100vh - 80px);
+  background-color: var(--primary-background-color)
 }
 
 .main .info h1 {
   font-size: 44px;
   margin-bottom: 40px;
+  color: var(--second-background-color)
+}
+
+.main .info h1 #full-name {
+  color: var(--primary-icon-color);
 }
 
 .main .info p {
   font-size: 16px;
   margin-bottom: 45px;
   width: 100%;
+  color: var(--second-background-color)
 }
 
 .main .info button,
 .content .post-list .post-item .buttons button {
   padding: 10px 30px;
-  background: #3498db;
+  background: var(--primary-icon-color);
   border: none;
   color: #fff;
   font-size: 16px;
@@ -93,7 +115,7 @@ nav .nav-links a.selected {
 
 .main .info button:hover,
 .content .post-list .post-item .buttons button:hover {
-  background-color: #2980b9;
+  background-color: var(--second-icon-color);
 }
 
 .main img {
@@ -131,9 +153,10 @@ nav .nav-links a.selected {
 }
 
 .recent .posts .post-item {
-  background-color: #fff;
+  background-color: var(--primary-background-color);
   padding: 24px;
   width: 460px;
+  color: var(--second-background-color)
 }
 
 .recent .posts .post-item h3,
@@ -166,16 +189,17 @@ nav .nav-links a.selected {
 }
 
 .separator {
-  padding: 40px 148px 0;
-}
-
-.separator h4 {
-  margin-bottom: 30px;
+  padding: 40px 148px 30px;
+  background-color: var(--primary-background-color);
+  color: var(--second-background-color);
 }
 
 .featured {
   padding: 40px 290px 0;
+  background-color: var(--primary-background-color);
+  color: var(--second-background-color);
 }
+
 
 .featured .item,
 .works-list .item {
@@ -210,7 +234,7 @@ nav .nav-links a.selected {
 .featured .item .details .item-info .year-badge,
 .works-list .item .details .item-info .year-badge,
 .content .work-info .year-badge {
-  background-color: #3498db;
+  background-color: var(--primary-icon-color);
   padding: 2px 14px;
   color: #fff;
   border-radius: 16px;
@@ -235,6 +259,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--primary-background-color);
+  color: var(--second-background-color);
 }
 
 footer .socials {
@@ -248,10 +274,11 @@ footer .socials i {
   font-size: 40px;
   cursor: pointer;
   transition: color 0.3s ease;
+  color: var(--second-background-color);
 }
 
 footer .socials i:hover {
-  color: #3498db;
+  color: var(--primary-icon-color);
 }
 
 footer p {
@@ -334,7 +361,7 @@ footer p {
 }
 
 .content .post-list .post-item .buttons i:hover {
-  color: #3498db;
+  color: var(--primary-icon-color);
 }
 
 .content .container {
@@ -368,6 +395,18 @@ footer p {
   font-size: 14px;
 }
 
+#icon-dark-mode {
+  margin-top: 0.2rem;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+  color: var(--second-background-color);
+}
+
+#icon-dark-mode:hover {
+  color: var(--primary-icon-color);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1400px) {
   nav {
     padding: 20px 60px;
@@ -381,9 +420,12 @@ footer p {
     padding: 60px;
   }
 
-  .featured,
+  .featured{
+    padding: 40px 60px 30px;
+  } 
+
   .separator {
-    padding: 40px 60px 0;
+    padding: 40px 60px 30px;
   }
 
   .page-title {
@@ -597,3 +639,5 @@ footer p {
     height: auto;
   }
 }
+
+
